@@ -1,0 +1,824 @@
+﻿/* DEFAULTS
+----------------------------------------------------------*/
+
+body   
+{
+    background: white;
+    font-size: .80em;
+    font-family: Arial, Sans-Serif, "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+a:link, a:visited
+{
+    text-decoration: none;
+}
+
+a:hover
+{
+    text-decoration: underline;
+}
+
+a:active
+{
+    text-decoration: none;
+}
+
+p
+{
+    margin-bottom: 10px;
+    line-height: 1.6em;
+}
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #666666;
+    font-variant: small-caps;
+    text-transform: none;
+    font-weight: 200;
+    margin-bottom: 0px;
+}
+
+h1
+{
+    font-size: 1.6em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h2
+{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+h3
+{
+    font-size: 1.2em;
+}
+
+h4
+{
+    font-size: 1.1em;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0px;
+}
+
+img
+{
+    border: 0;   
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+.page
+{
+    width: 960px;
+    background-color: #fff;
+    margin: 20px auto 0px auto;
+    border: 1px solid #496077;
+}
+
+.header
+{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background: #4b6c9e;
+    width: 100%;
+}
+
+.header h1
+{
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    color: #f9f9f9;
+    border: none;
+    line-height: 2em;
+    font-size: 2em;
+}
+
+.main
+{
+    padding: 0px 12px;
+    margin: 12px 8px 8px 8px;
+    min-height: 420px;
+}
+
+.leftCol
+{
+    padding: 6px 0px;
+    margin: 12px 8px 8px 8px;
+    width: 200px;
+    min-height: 200px;
+}
+
+.footer
+{
+    color: #4e5766;
+    padding: 8px 0px 0px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+}
+
+
+/* TAB MENU   
+----------------------------------------------------------*/
+
+div.hideSkiplink
+{
+    background-color:#3a4f63;
+    width:100%;
+}
+
+div.menu
+{
+    padding: 4px 0px 4px 8px;
+}
+
+div.menu ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+div.menu ul li a, div.menu ul li a:visited
+{
+    background-color: #465c71;
+    border: 1px #4e667d solid;
+    color: #dde4ec;
+    display: block;
+    line-height: 1.35em;
+    padding: 4px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+div.menu ul li a:hover
+{
+    background-color: #bfcbd6;
+    color: #465c71;
+    text-decoration: none;
+}
+
+div.menu ul li a:active
+{
+    background-color: #465c71;
+    color: #cfdbe6;
+    text-decoration: none;
+}
+
+/* FORM ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset
+{
+    margin: 1em 0px;
+    padding: 1em;
+    border: 1px solid #ccc;
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+fieldset.login label, fieldset.register label, fieldset.changePassword label
+{
+    display: block;
+}
+
+fieldset label.inline 
+{
+    display: inline;
+}
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input.textEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+input.passwordEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+div.accountInfo
+{
+    width: 42%;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+
+.clear
+{
+    clear: both;
+}
+
+.title
+{
+    display: block;
+    float: left;
+    text-align: left;
+    width: auto;
+}
+
+.loginDisplay
+{
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    padding: 10px;
+    color: White;
+}
+
+.loginDisplay a:link
+{
+    color: white;
+}
+
+.loginDisplay a:visited
+{
+    color: white;
+}
+
+.loginDisplay a:hover
+{
+    color: white;
+}
+
+.failureNotification
+{
+    font-size: 1.2em;
+    color: Red;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.submitButton
+{
+    text-align: right;
+    padding-right: 10px;
+}
+
+/****** Global Style ********/
+.stylesheet
+{
+    font-size: 11px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-variant: normal;
+    width: 100%;
+}
+
+
+/****************************/
+
+/********* Arrow Box *********************/
+.arrow_box {
+	position: absolute;
+    z-index: 1;
+	background: #c2e1f5;
+	color: Black;
+	border: 4px solid #c2e1f5;
+}
+.arrow_box:after, .arrow_box:before {
+	bottom: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-bottom-color: #c2e1f5;
+	border-width: 15px;
+	left: 50%;
+	margin-left: -15px;
+}
+.arrow_box:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-bottom-color: #c2e1f5;
+	border-width: 16px;
+	left: 50%;
+	margin-left: -16px;
+}
+
+.arrow_box_container
+{
+    position: relative;
+    top: 15px;
+}
+
+.sign_out_style
+{
+    color: White;
+    background-color: #86BF2E;
+    font-size: 10pt;
+    border:1px solid #000000;
+    text-decoration:none;
+    padding: 3px 10px 3px 10px;
+}
+
+.arrow_down {
+    width: 0; 
+	height: 0; 
+	float: right;
+	line-height: 32;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-top: 7px solid white;
+}
+/***************************************/
+
+/******** Global Style *************/
+span.requiredStyle
+{
+    color:Red;
+}
+
+.EmptyMessageStyle
+{
+    padding: 15px 0 15px 0;
+    text-align: center;
+    color: Red;
+    font-size: 16px;
+    font-family: Verdana;
+    font-weight: bold;
+}
+
+.lbPaddingStyle
+{
+    background-color: #86BF2E;
+    font-size: 10pt;
+    color: White;
+    border:1px solid #000000;
+    text-decoration:none;
+    padding: 3px 10px 3px 10px;
+}
+
+.lbPaddingGrayStyle
+{
+    background-color: #605364;
+    font-size: 10pt;
+    color: #DDDDE5;
+    border: 1px solid #000000;
+    text-decoration: none;
+    padding: 3px 10px 3px 10px;
+   
+}
+
+.dropdown_style select
+{
+    width: 100px;
+    font-family: Arial;   
+}
+
+.headerText
+{
+    color: White; 
+    font-family: Comic Sans MS;
+    font-size: 18px;
+}
+
+.headerSubText
+{
+    color: White;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+.newsletterTitle
+{
+    color: Black;
+    font-weight: bold;
+    font-family: Verdana;
+    font-size: 16px;   
+}
+
+.masterMenu{ 
+	display: block; 
+	float: left; 
+	margin: 60 0 0 6px; 
+	padding: 0 15px 0 15px;
+	}
+
+.masterMenu a   
+{
+    height: 28px;  
+	color: #CFF; 
+	text-decoration: none; 
+	display: block; 
+	float: left; 
+	line-height: 200%; 
+	padding: 10px 15px 3px 15px; 
+	margin: 0 0px 0 0px;
+	}
+/***********************/
+
+/******** Pop Up *********/
+.popupBG
+{
+    background-color: #333333;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+.popupBG2
+{
+    background-color: #333333;
+    filter: alpha(opacity=10);
+    opacity: 0.1;
+}
+.modalPopup
+{
+    background-color: #FFFFFF;
+    border: solid 1px #CCCCCC;
+    padding: 3px;
+}
+
+   .PopupFormTitleStyle
+{
+        background-color: #AB3C2B;
+    color: White;
+    height: 25px;
+    padding: 0 3px 0 3px;
+    font-weight: bold;
+}
+
+.PopupFormBG
+{
+	border:solid 1px #73c8f0;
+	background-color: #CCDCE9;
+	height: 100%;
+	width: 100%;
+	color: Black;
+	text-align:left;
+}
+
+.PopupFormBG2
+{
+	border:solid 1px #73c8f0;
+	background-color: #6690C0;
+	height: 100%;
+	width: 100%;
+	color: Black;
+	text-align:left;
+}
+
+
+
+.PopupFormButton
+{
+    background-color: #86BF2E;
+    font-size: 10pt;
+    color: White;
+    border:1px solid #000000;
+    text-decoration:none;
+    padding: 3px 10px 3px 10px;
+    border-radius: 5px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 5px;
+}
+
+.PopUpFormMainTbl
+{
+    text-align: left;
+}
+
+
+
+/*********************/
+
+/***********Log In ************/
+.log_in_table
+{
+    background-color: White;
+    color: Black;
+    font-family: Arial Black, Verdana;
+    font-size: 14px;
+    margin: 40px; 
+    padding: 20px;  
+    width: 400px;
+}
+
+.validation_summary_style
+{
+    color: Red;   
+}
+
+
+/*******************************/
+
+/**********Menu *************/
+
+.main_menu_style
+{
+    display: block;
+    border: 0px;
+}
+
+div.menu_link
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 205px;
+    height: 36px;
+}
+
+.lb_edit_newsletter
+{
+    background-image: url('../Images/edit-newsletter-link.gif') no-repeat;
+    display: block;
+    border: 0px;
+}
+
+/*******************************/
+
+/***********GridView Style******/
+.gvHeaderStyle
+{
+    font-size: 12px;
+    background: #6690C0;  /*#307D7E;*/
+    color: White;
+    font-weight: bold;
+
+}
+
+.gvHeaderStyle th
+{
+   text-align: left;
+    color: White;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 5px 5px 5px;
+    border: solid 1px #fff; 
+}
+
+.gvHeaderStyle a
+{
+    color: White;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+.gvRowStyle
+{
+    background-color: #E3EAEB;
+    font-size: 12px;
+    color: Black;
+    border: solid 1px #fff; 
+}
+
+.gvRowStyle td
+{
+    font-size: 12px;
+    text-decoration: none;
+    color: Black;
+    border: solid 1px #fff; 
+    text-align: left;
+    font-family: Verdana;
+}
+
+.gvRowStyle a
+{
+    text-align: left;
+    font-family: Verdana;
+    font-size: 12px;
+    text-decoration: none;
+    color: Black;
+}
+/***GridView Hover Row Style ***/
+.gvHoverRowStyle
+{
+    background-color: #E3EAEB;
+    font-size: 12px;
+    color: Black;
+    border: solid 1px #fff; 
+}
+
+.gvHoverRowStyle:hover
+{
+    background-color: #808080;
+    font-size: 12px;
+    color: #FFFFF0;
+    border: solid 1px Black; 
+    cursor: pointer;
+}
+
+.gvHoverRowStyle:hover a
+{
+    text-align: left;
+    font-family: Verdana;
+    font-size: 12px;
+    text-decoration: none;
+    color: #FFFFF0;
+}
+
+.gvHoverRowStyle:hover td
+{
+    font-size: 12px;
+    text-decoration: none;
+    color: #FFFFF0;
+    border: solid 1px #fff; 
+    text-align: left;
+    font-family: Verdana;
+}
+
+.gvHoverRowStyle td
+{
+    font-size: 12px;
+    text-decoration: none;
+    color: Black;
+    border: solid 1px #fff; 
+    text-align: left;
+    font-family: Verdana;
+}
+
+.gvHoverRowStyle a
+{
+    text-align: left;
+    font-family: Verdana;
+    font-size: 12px;
+    text-decoration: none;
+    color: Black;
+}
+
+.gvHoverAltRowStyle
+{
+    background-color: White;
+    font-size: 12px;
+    color: Black;
+}
+
+.gvHoverAltRowStyle:hover
+{
+    background-color: #808080;
+    font-size: 12px;
+    color: #FFFFF0;
+    cursor: pointer;
+    border: solid 1px Black; 
+}
+
+.gvHoverAltRowStyle:hover td
+{
+    font-family: Verdana;
+    font-size: 12px;
+    text-decoration: none;
+    color: #FFFFF0;
+    border: solid 1px #fff; 
+    text-align: left;
+}
+
+.gvHoverAltRowStyle:hover a
+{
+    text-align: left;
+    font-size: 12px;
+    text-decoration: none;
+    color: #FFFFF0;
+    font-family: Verdana;
+}
+
+.gvHoverAltRowStyle a
+{
+    text-align: left;
+    font-size: 12px;
+    text-decoration: none;
+    color: Black;
+    font-family: Verdana;
+}
+
+.gvHoverAltRowStyle td
+{
+    font-family: Verdana;
+    font-size: 12px;
+    text-decoration: none;
+    color: Black;
+    border: solid 1px #fff; 
+    text-align: left;
+}
+
+.gvPagerStyle
+{
+   text-align: right;
+   background: #6690C0;  /*#307D7E;*/
+}
+
+.gvPagerStyle a
+{
+    color: Black;    
+    font-family: Arial;
+    font-weight: bold;    
+    padding: 0 5px 0 5px;  
+    text-decoration: none;
+    border: solid 1px Black; 
+    margin: 0 5px 0 5px;
+    background-color: White;
+}
+
+.gvPagerStyle a:hover
+{
+    text-decoration: underline;
+}
+
+.gvPagerStyle span
+{
+    background-color:#09151F;
+    color: #FFFFFF;    
+    font-family:Arial;
+    font-weight:bold;    
+    padding: 0 5px 0 5px;  
+    border: solid 1px Black;   
+    text-decoration: none;
+    margin: 0 5px 0 5px;
+}
+
+.gvAltRowStyle
+{
+    background-color: White;
+    font-size: 12px;
+    color: Black;
+}
+
+.gvAltRowStyle a
+{
+    text-align: left;
+    font-size: 12px;
+    text-decoration: none;
+    color: Black;
+    font-family: Verdana;
+}
+
+.gvAltRowStyle td
+{
+    font-family: Verdana;
+    font-size: 12px;
+    text-decoration: none;
+    color: Black;
+    border: solid 1px #fff; 
+    text-align: left;
+}
+
+
+/*****************************/
+
+
+/**************Box Style******************/
+
+.box_container
+{
+  width: 150px;
+}
+
+.box_content__more_link
+{
+  color: white;
+  background-color: Maroon; 
+    font-size: 10pt;
+    border: 1px solid #000000;
+    text-decoration: none;
+    padding: 3px 10px 3px 10px;
+    margin-left: 5px;
+}
+
+/***************************************/

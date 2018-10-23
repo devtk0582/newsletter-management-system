@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsletterMS", "NewsletterMS\NewsletterMS.csproj", "{EC55D2AE-4482-40F2-84CB-012B14393B03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsletterMSBLL", "NewsletterMSBLL\NewsletterMSBLL.csproj", "{0A91368D-98C8-4363-8FBD-408AF3214B94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC55D2AE-4482-40F2-84CB-012B14393B03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC55D2AE-4482-40F2-84CB-012B14393B03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC55D2AE-4482-40F2-84CB-012B14393B03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC55D2AE-4482-40F2-84CB-012B14393B03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A91368D-98C8-4363-8FBD-408AF3214B94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A91368D-98C8-4363-8FBD-408AF3214B94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A91368D-98C8-4363-8FBD-408AF3214B94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A91368D-98C8-4363-8FBD-408AF3214B94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C02BCB6F-D72B-40AD-94E4-C9D02DE37BB9}
+	EndGlobalSection
+EndGlobal

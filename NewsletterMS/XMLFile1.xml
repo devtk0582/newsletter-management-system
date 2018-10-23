@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+          <meta name="description" content=""/>
+            <meta name="author" content=""/>
+              <title>Newsletters</title>
+              <link href="Styles/main.css" rel="stylesheet" type="text/css" />
+              <link href="Styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
+              <script src="Scripts/jquery.js" type="text/javascript"></script>
+              <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
+            </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span
+                        class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="Admin/Default.aspx">Home</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 portfolio-item">
+          <div class="row" style="padding: 5px;">
+            <div class="col-lg-3">
+              <div class="col-lg-12 portfolio-item" id="divHeaderAd1">
+                <p>
+                  <iframe allowfullscreen="" frameborder="0" height="180" src="//www.youtube.com/embed/wuV4BCYv-YY" width="320"></iframe>
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="row">
+                <div class="col-lg-12 portfolio-item" id="divHeaderBanner">
+                  <div class='row' style='margin-top:20px'>
+                    <p>
+                      <img alt="" src="http://localhost/NewsletterMS/Upload/3c36257a-c276-4509-8525-81f9bdd6b45e.jpg" style="height:384px; width:512px" />
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 text-left">Wednesday, May 13, 2015</div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="col-lg-12 portfolio-item" id="divHeaderAd2">
+                <div class='row' style='margin-top:20px'>
+                  <p>
+                    <iframe allowfullscreen="" frameborder="0" height="180" src="//www.youtube.com/embed/fEPqgSNLfK8" width="320"></iframe>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" style="padding: 5px;">
+            <div class="col-lg-12 portfolio-item" id="divHeaderMain">
+              <div class='row' style='margin-top:20px'>
+                <p>
+                  <img alt="" src="http://localhost/NewsletterMS/Upload/47f08034-ce4e-4509-b03c-bf5621e38bc4.jpg" style="height:768px; width:1024px" />
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="divMain">
+        <div class="col-lg-8">
+          <div class="row" style="padding: 5px;">
+            <div class="col-lg-12 portfolio-item" id="divDefaultBoxes">
+              <div style='margin-bottom: 20px;' >
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Local</h3>
+                  </div>
+                  <div class="panel-body" id="sectionS1">
+                    <div class='row' style='margin-top:20px'>
+                      <p>Test Test</p>
+                    </div>
+                    <div class='row' style='margin-top:20px'>
+                      <p>
+                        <img alt="" src="http://localhost/NewsletterMS/Upload/37e8956a-b0fd-4ee6-b4af-92fb84eee4e4.jpg" style="height:384px; width:512px" />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style='margin-bottom: 20px;' >
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">National</h3>
+                  </div>
+                  <div class="panel-body" id="sectionS2">
+                    <div class='row' style='margin-top:20px'>
+                      <p>TTTTTTTTTTTTTTTTTTTTT</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style='margin-bottom: 20px;' >
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Entertainment</h3>
+                  </div>
+                  <div class="panel-body" id="sectionS3">
+                    <div class='row' style='margin-top:20px'>
+                      <p>
+                        <img alt="" src="http://localhost/NewsletterMS/Upload/ba0f1238-5a9f-41d1-9a7f-90dad8eaae44.jpg" style="height:384px; width:512px" />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="row" style="padding: 5px;">
+            <div class="col-lg-12 portfolio-item" id="divAdMain">
+              <div class='row' style='margin-top:20px'>
+                <p>
+                  <iframe allowfullscreen="" frameborder="0" height="180" src="//www.youtube.com/embed/wuV4BCYv-YY" width="320"></iframe>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+        <!-- Footer -->
+        <footer>
+          <div class="row">
+            <div class="col-lg-12">
+              <p>
+                Copyright &copy; 2015
+              </p>
+            </div>
+          </div>
+          <!-- /.row -->
+        </footer>
+      </div>
+  </body>
+</html>

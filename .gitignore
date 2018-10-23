@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/NewsletterMS/bin
+/NewsletterMS/obj
+/NewsletterMS/Properties/PublishProfiles/FolderProfile.pubxml.user
+/NewsletterMS/Properties/PublishProfiles/FolderProfile.pubxml
+/NewsletterMSBLL/obj
+/NewsletterMSBLL/bin

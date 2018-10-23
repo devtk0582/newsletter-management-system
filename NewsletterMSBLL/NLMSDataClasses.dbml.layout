@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 15.75, 16.125" name="NLMSDataClasses">
+  <DataContextMoniker Name="/NLMSDataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="085cc2cb-4531-4489-916f-6b749f0112c6" absoluteBounds="3.5, 4.375, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/NLMSDataClassesDataContext/AdRunSheet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b43248a7-75f4-4c81-b1ec-783517fc7345" absoluteBounds="3.515, 4.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8cf66885-ca8f-47b4-a238-2098da38de6b" absoluteBounds="6, 0.625, 2, 3.1170068359375">
+      <DataClassMoniker Name="/NLMSDataClassesDataContext/Advertiser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f56b7812-50d8-42df-ba26-91a0d944700c" absoluteBounds="6.015, 1.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eea10d50-16dc-4676-a7a6-77b7d28c6f84" absoluteBounds="10.625, 1.5, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/NLMSDataClassesDataContext/AdType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3473729c-311e-4059-b684-6693be656ff6" absoluteBounds="10.64, 1.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bd30ad37-55f1-4bdb-8e7c-75ebe89ebfc3" absoluteBounds="10.625, 3.625, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/NLMSDataClassesDataContext/AdRegion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fd569f58-4423-4d5c-876d-2746b064944c" absoluteBounds="10.64, 4.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d445660b-6f87-4521-bf2d-61dd86d47e32" absoluteBounds="2.875, 10.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/NLMSDataClassesDataContext/NewsletterUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c2d551de-bea9-46b9-94d5-5af0ea59abe4" absoluteBounds="2.89, 10.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7fcbdd5b-5a2b-4e4d-b31e-3bda0c76fc4a" absoluteBounds="2.75, 1.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/NLMSDataClassesDataContext/NewsletterBox" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5317bb0b-58e8-45f0-8a49-e1e3b22b082c" absoluteBounds="2.765, 2.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b7edf67a-edce-44cf-82ae-602bf5a38be1" absoluteBounds="13.5, 2, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/NLMSDataClassesDataContext/Ad" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cb11f2d3-f1f4-4534-aa7e-1dfc80634638" absoluteBounds="13.515, 2.46, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(12.625 : 4.31814697265625); (13.5 : 4.31814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NLMSDataClassesDataContext/AdRegion/AdRegion_Ad" />
+      <nodes>
+        <classShapeMoniker Id="bd30ad37-55f1-4bdb-8e7c-75ebe89ebfc3" />
+        <classShapeMoniker Id="b7edf67a-edce-44cf-82ae-602bf5a38be1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.625 : 2.44314697265625); (13.5 : 2.44314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NLMSDataClassesDataContext/AdType/AdType_Ad" />
+      <nodes>
+        <classShapeMoniker Id="eea10d50-16dc-4676-a7a6-77b7d28c6f84" />
+        <classShapeMoniker Id="b7edf67a-edce-44cf-82ae-602bf5a38be1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8 : 3.25564697265625); (13.5 : 3.25564697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NLMSDataClassesDataContext/Advertiser/Advertiser_Ad" />
+      <nodes>
+        <classShapeMoniker Id="8cf66885-ca8f-47b4-a238-2098da38de6b" />
+        <classShapeMoniker Id="b7edf67a-edce-44cf-82ae-602bf5a38be1" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="ec2c4c9b-eda1-4915-83d1-11d1a73b9e68" absoluteBounds="0.5, 1.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/NLMSDataClassesDataContext/NewsletterEntity" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b98dce18-5a28-4dd5-9823-d556f67e1435" absoluteBounds="0.515, 1.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="71dc80b5-b3e3-47c0-b885-391d3b117506" absoluteBounds="5, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/NLMSDataClassesDataContext/NewsletterSection" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0280fd28-b83c-4461-bb4e-a1da94b2f6c4" absoluteBounds="5.015, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="957f50c3-5452-4a1b-9e3c-c3bd3278dec4" absoluteBounds="3.5, 8, 2, 2.5401025390625">
+      <DataClassMoniker Name="/NLMSDataClassesDataContext/AdminUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2e800ade-e9a2-46fe-8404-519a73e4d3e9" absoluteBounds="3.515, 8.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="53e13cb1-d763-482c-b616-8e8de6d7448e" absoluteBounds="3.25, 14.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/NLMSDataClassesDataContext/AdminNewsletter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="04516871-eb95-4eb1-b478-066b720fe0f1" absoluteBounds="3.265, 14.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.09375 : 10.5401025390625); (5.09375 : 14.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NLMSDataClassesDataContext/AdminUser/AdminUser_AdminNewsletter" />
+      <nodes>
+        <classShapeMoniker Id="957f50c3-5452-4a1b-9e3c-c3bd3278dec4" />
+        <classShapeMoniker Id="53e13cb1-d763-482c-b616-8e8de6d7448e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4193f83c-de09-4db6-b7e5-784598eb09c1" absoluteBounds="1, 7.25, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/NLMSDataClassesDataContext/Newsletter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bd1c7263-36b9-4a57-9801-734946940785" absoluteBounds="1.0150000000000001, 7.71, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3 : 7.25); (3.5 : 6.72280110677083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NLMSDataClassesDataContext/Newsletter/Newsletter_AdRunSheet" />
+      <nodes>
+        <classShapeMoniker Id="4193f83c-de09-4db6-b7e5-784598eb09c1" />
+        <classShapeMoniker Id="085cc2cb-4531-4489-916f-6b749f0112c6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.9374995 : 10.1747054036458); (1.9374995 : 11.8662019856771); (2.875 : 11.8662019856771)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/NLMSDataClassesDataContext/Newsletter/Newsletter_NewsletterUser" />
+      <nodes>
+        <classShapeMoniker Id="4193f83c-de09-4db6-b7e5-784598eb09c1" />
+        <classShapeMoniker Id="d445660b-6f87-4521-bf2d-61dd86d47e32" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.8749995 : 7.25); (1.8749995 : 3.46799967447917); (2.5625 : 3.46799967447917); (2.5625 : 2.92390055338542); (2.75 : 2.92390055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/NLMSDataClassesDataContext/Newsletter/Newsletter_NewsletterBox" />
+      <nodes>
+        <classShapeMoniker Id="4193f83c-de09-4db6-b7e5-784598eb09c1" />
+        <classShapeMoniker Id="7fcbdd5b-5a2b-4e4d-b31e-3bda0c76fc4a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.37499975 : 7.25); (1.37499975 : 3.40549967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/NLMSDataClassesDataContext/Newsletter/Newsletter_NewsletterEntity" />
+      <nodes>
+        <classShapeMoniker Id="4193f83c-de09-4db6-b7e5-784598eb09c1" />
+        <classShapeMoniker Id="ec2c4c9b-eda1-4915-83d1-11d1a73b9e68" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 9.08735270182292); (3.5 : 9.08735270182292)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/NLMSDataClassesDataContext/Newsletter/Newsletter_AdminUser" />
+      <nodes>
+        <classShapeMoniker Id="4193f83c-de09-4db6-b7e5-784598eb09c1" />
+        <classShapeMoniker Id="957f50c3-5452-4a1b-9e3c-c3bd3278dec4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.43749725 : 10.1747054036458); (1.43749725 : 15.0392976888021); (3.25 : 15.0392976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/NLMSDataClassesDataContext/Newsletter/Newsletter_AdminNewsletter" />
+      <nodes>
+        <classShapeMoniker Id="4193f83c-de09-4db6-b7e5-784598eb09c1" />
+        <classShapeMoniker Id="53e13cb1-d763-482c-b616-8e8de6d7448e" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="NewslettersDB" Class="NLMSDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=TK-PC\SQLEXPRESS;Initial Catalog=NewslettersDB;Integrated Security=True" SettingsObjectName="NewsletterMSBLL.Properties.Settings" SettingsPropertyName="NewslettersDBConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AdRunSheets" Member="AdRunSheets">
+    <Type Name="AdRunSheet">
+      <Column Name="AdRunID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NewsletterID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="AdID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="BoxNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Rate" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Link" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Newsletter_AdRunSheet" Member="Newsletter" ThisKey="NewsletterID" OtherKey="NewsletterID" Type="Newsletter" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Advertisers" Member="Advertisers">
+    <Type Name="Advertiser">
+      <Column Name="AdvertiserID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AdvertiserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AdvertiserRegionType" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="AdvertiserContact1Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AdvertiserContact1Phone" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="AdvertiserContact1Phone2" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="AdvertiserContact1Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AdvertiserContact2Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AdvertiserContact2Phone" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="AdvertiserContact2Phone2" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="AdvertiserContact2Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Advertiser_Ad" Member="Ads" ThisKey="AdvertiserID" OtherKey="AdvertiserID" Type="Ad" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AdTypes" Member="AdTypes">
+    <Type Name="AdType">
+      <Column Name="TypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TypeName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TypeDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="AdType_Ad" Member="Ads" ThisKey="TypeID" OtherKey="AdType" Type="Ad" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AdRegions" Member="AdRegions">
+    <Type Name="AdRegion">
+      <Column Name="RegionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RegionName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RegionDesc" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="AdRegion_Ad" Member="Ads" ThisKey="RegionID" OtherKey="AdRegionCode" Type="Ad" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NewsletterUsers" Member="NewsletterUsers">
+    <Type Name="NewsletterUser">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NewsletterID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="UserMobile" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="UserEmail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserPhone" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="UserStatus" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="UserCity" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserState" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="UserZip" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="Newsletter_NewsletterUser" Member="Newsletter" ThisKey="NewsletterID" OtherKey="NewsletterID" Type="Newsletter" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NewsletterBoxes" Member="NewsletterBoxes">
+    <Type Name="NewsletterBox">
+      <Column Name="BoxID" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NewsletterID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BoxType" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="BoxImage" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BoxLink" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BoxData" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="BoxPage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AdID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="Newsletter_NewsletterBox" Member="Newsletter" ThisKey="NewsletterID" OtherKey="NewsletterID" Type="Newsletter" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ads" Member="Ads">
+    <Type Name="Ad">
+      <Column Name="AdID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AdvertiserID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="AdCampaign" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AdType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AdDescription" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AdInstruction" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="AdImage" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AdContent" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AdVideo" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="AdLink" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="AdPosition" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="AdPage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AdPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="AdRegionCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AdMarket" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="AdRegion_Ad" Member="AdRegion" ThisKey="AdRegionCode" OtherKey="RegionID" Type="AdRegion" IsForeignKey="true" />
+      <Association Name="AdType_Ad" Member="AdType1" ThisKey="AdType" OtherKey="TypeID" Type="AdType" IsForeignKey="true" />
+      <Association Name="Advertiser_Ad" Member="Advertiser" ThisKey="AdvertiserID" OtherKey="AdvertiserID" Type="Advertiser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NewsletterEntities" Member="NewsletterEntities">
+    <Type Name="NewsletterEntity">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NewsletterID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="EntityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AdID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Section" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="Newsletter_NewsletterEntity" Member="Newsletter" ThisKey="NewsletterID" OtherKey="NewsletterID" Type="Newsletter" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NewsletterSections" Member="NewsletterSections">
+    <Type Name="NewsletterSection">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AdminUsers" Member="AdminUsers">
+    <Type Name="AdminUser">
+      <Column Name="AdminUserID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NewsletterID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Role" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="ContactEmail" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="AdminUser_AdminNewsletter" Member="AdminNewsletters" ThisKey="AdminUserID" OtherKey="AdminUserID" Type="AdminNewsletter" />
+      <Association Name="Newsletter_AdminUser" Member="Newsletter" ThisKey="NewsletterID" OtherKey="NewsletterID" Type="Newsletter" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AdminNewsletters" Member="AdminNewsletters">
+    <Type Name="AdminNewsletter">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AdminUserID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="NewsletterID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="AddDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="AdminUser_AdminNewsletter" Member="AdminUser" ThisKey="AdminUserID" OtherKey="AdminUserID" Type="AdminUser" IsForeignKey="true" />
+      <Association Name="Newsletter_AdminNewsletter" Member="Newsletter" ThisKey="NewsletterID" OtherKey="NewsletterID" Type="Newsletter" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Newsletters" Member="Newsletters">
+    <Type Name="Newsletter">
+      <Column Name="NewsletterID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NewsletterName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NewsletterType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NewsletterFrequency" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="PrimaryContactName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PrimaryContactPhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PrimaryContactEmail" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UniqueID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="BackgroundColor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SectionColor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Newsletter_AdRunSheet" Member="AdRunSheets" ThisKey="NewsletterID" OtherKey="NewsletterID" Type="AdRunSheet" />
+      <Association Name="Newsletter_NewsletterUser" Member="NewsletterUsers" ThisKey="NewsletterID" OtherKey="NewsletterID" Type="NewsletterUser" />
+      <Association Name="Newsletter_NewsletterBox" Member="NewsletterBoxes" ThisKey="NewsletterID" OtherKey="NewsletterID" Type="NewsletterBox" />
+      <Association Name="Newsletter_NewsletterEntity" Member="NewsletterEntities" ThisKey="NewsletterID" OtherKey="NewsletterID" Type="NewsletterEntity" />
+      <Association Name="Newsletter_AdminUser" Member="AdminUsers" ThisKey="NewsletterID" OtherKey="NewsletterID" Type="AdminUser" />
+      <Association Name="Newsletter_AdminNewsletter" Member="AdminNewsletters" ThisKey="NewsletterID" OtherKey="NewsletterID" Type="AdminNewsletter" />
+    </Type>
+  </Table>
+  <Function Name="dbo.UploadUserList" Method="UploadUserList">
+    <Parameter Name="data" Type="System.String" DbType="NText" />
+    <Parameter Name="newsletter_id" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

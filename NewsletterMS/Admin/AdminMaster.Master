@@ -1,0 +1,198 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.Master.cs" Inherits="NewsletterMS.AdminMaster" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Newsletter Management System</title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <script src="../Scripts/jquery.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <center>
+            <div class="stylesheet">
+                <table width="90%" border="0" cellpadding="0" cellspacing="0" align="center">
+                    <tr>
+                        <td>
+                            <table width="100%" border="0" cellpadding="5" cellspacing="2" 
+                                bgcolor="#46636C">
+                                <tr>
+                                    <td align="left" width="19%" height="64">
+                                        <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Images/NewsLetterLogo.gif" Width="128" Height="64" />
+                                    </td>
+                                    <td width="46%" class="headerText">
+                                        &nbsp;
+                                    </td>
+                                    <td width="35%" align="right" valign="middle">
+                                        <asp:Label ID="lblWelcomeMessage" runat="server" CssClass="headerSubText"></asp:Label><br />
+                                        <asp:Label ID="lblDate" runat="server" CssClass="headerSubText"></asp:Label><br />
+                                        <asp:LinkButton ID="lbChangeProfile" runat="server" Text="Change Profile" ForeColor="Wheat" 
+                                            Font-Bold="true" Font-Size="12px" onclick="lbChangeProfile_Click"></asp:LinkButton> || 
+                                        <asp:LinkButton ID="lbSignOut" runat="server" Text="Sign Out" ForeColor="Wheat" 
+                                            Font-Bold="true" Font-Size="12px" onclick="lbSignOut_Click"></asp:LinkButton>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Menu ID="SuperAdminMenu" runat="server" Orientation="Horizontal" SkipLinkText="" 
+                                Width="1250px" BackColor="#7C6F57" DynamicHorizontalOffset="2" 
+                                Font-Names="Verdana" Font-Size="14px" ForeColor="White" 
+                                StaticSubMenuIndent="10px">
+                                <Items>
+                                    <asp:MenuItem Text="Home" NavigateUrl="~/Admin/Default.aspx" Value="Home"></asp:MenuItem>
+                                </Items>
+                                <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                                <StaticMenuItemStyle Width="110px" CssClass="masterMenu"/>
+                                <StaticMenuStyle CssClass="masterMenu" />
+                            </asp:Menu>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td valign="top">
+                                        <div style="padding: 3px 0 5px 0;background-color: #E6D9B9; border: 1px dotted black; height: 500px">
+                                            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                                            </asp:ContentPlaceHolder>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <asp:UpdateProgress ID="uppMain" runat="server">
+                                    <ProgressTemplate>
+                                        <div style="z-index: 1001; background-color: #FFFFFF; filter: alpha(opacity=80);
+                                            opacity: 0.8; width: 100%; height: 100%; top: 0; left: 0px; position: fixed;">
+                                            <center>
+                                                <div style="position: fixed; top: 35%; left: 35%; text-align: center;">
+                                                    <asp:Image ID="imgLoader" runat="server" ImageUrl="~/Images/ajax-loader-squares.gif" />
+                                                </div>
+                                            </center>
+                                        </div>
+                                    </ProgressTemplate>
+                                </asp:UpdateProgress>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <asp:UpdatePanel ID="PublicationsUpdatePanel" runat="server">
+        <ContentTemplate>
+                            <input id="dummy" type="button" style="display: none" runat="server" />
+<cc1:modalpopupextender runat="server" ID="mpePopup" TargetControlID="dummy"
+   PopupDragHandleControlID="pnlPopUp"  PopupControlID="pnlPopUp" BackgroundCssClass="popupBG" 
+                                DropShadow="true" />
+<asp:Panel ID="pnlPopUp" runat="server" CssClass="modalPopup">
+<center>
+            <table class="PopupFormBG" width="60%" cellpadding="0" cellspacing="0">
+                <tr style="height: 30px;">
+                    <td align="left" class="PopupFormTitleStyle">
+                        <asp:Label ID="lblTitle" runat="server" Text="Change Profile" ></asp:Label>
+                        <asp:HiddenField ID="hfAdminID" runat="server" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="lblErrorMsg" runat="server" ForeColor="Red"></asp:Label>
+                    </td>
+                </tr>
+                <tr style="padding: 10px 8px 5px 8px;">
+                    <td align="center">
+                        <table cellpadding="5" cellspacing="3" width="100%" class="PopUpFormMainTbl">
+                        <tr>
+                                <td>
+                                    <strong>Name</strong><span class="requiredStyle">*</span>:
+                                </td>
+                                <td>
+                                    <asp:TextBox Columns="30" ID="txtAdminName" TabIndex="1" runat="server" CssClass="textbox"
+                                        MaxLength="50"></asp:TextBox>
+                                </td>
+                            </tr>    
+                            <tr>
+                                <td>
+                                    New Password:
+                                </td>
+                                <td>
+                                    <asp:TextBox Columns="30" ID="txtPassword" TabIndex="2" runat="server" CssClass="textbox"
+                                        MaxLength="50"></asp:TextBox>
+                                </td>
+                            </tr>    
+                            <tr>
+                                <td>
+                                    Update Password:
+                                </td>
+                                <td>
+                                    <asp:CheckBox ID="cbUpdatePassword" runat="server" TabIndex="3"></asp:CheckBox>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td>
+                                    Phone:
+                                </td>
+                                <td>
+                                   <asp:TextBox Columns="20" ID="txtPhone" TabIndex="4" runat="server" CssClass="textbox"
+                                        MaxLength="20"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Email:
+                                </td>
+                                <td>
+                                   <asp:TextBox Columns="20" ID="txtEmail" TabIndex="5" runat="server" CssClass="textbox"
+                                        MaxLength="20"></asp:TextBox>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr style="height: 50px;">
+                    <td align="right">
+                        <table width="100px">
+                            <tr>
+                                <td align="center">
+                                    <asp:LinkButton TabIndex="6" ID="lbSave" runat="server" Text="Update" CssClass="PopupFormButton" OnClick="lbSave_Click"></asp:LinkButton>
+                                </td>
+                                <td align="center">
+                                    <asp:LinkButton TabIndex="7" ID="lbCancel" runat="server" Text="Cancel" CssClass="PopupFormButton" OnClick="lbCancel_Click"></asp:LinkButton>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+    </center>
+</asp:Panel>
+</ContentTemplate>
+</asp:UpdatePanel>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="50px" align="center" style="font-size: 12px; background-color: #FF9933;
+                            color: White;">
+                            Copyright @ 2015 Powered by Ke Tang
+                                        </table>
+            </div>
+        </center>
+    </form>
+</body>
+</html>
+
